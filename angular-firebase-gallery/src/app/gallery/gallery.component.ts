@@ -10,6 +10,8 @@ import { GalleryImage } from '../models/galleryImage.model';
 })
 export class GalleryComponent implements OnInit, OnChanges {
 
+  
+
   // images:Observable<GalleryImage[]>;
   images:Observable<GalleryImage[]>;
 
@@ -17,10 +19,18 @@ export class GalleryComponent implements OnInit, OnChanges {
 
   ngOnInit() {
     this.images = this.imageService.getImages();
+    this.images.subscribe(pic =>{
+      console.log(pic.keys);
+    });
   }
 
   ngOnChanges(){
     this.images = this.imageService.getImages();
+    this.images.subscribe(pic =>{
+      console.log(pic.keys.name);
+    });
   }
+  
+
 
 }

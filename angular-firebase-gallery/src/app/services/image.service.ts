@@ -29,7 +29,10 @@ export class ImageService {
 
   getImages(): Observable<GalleryImage[]> {
     // all of our images will be under the uploads parent or folder
-    return this.db.list('uploads').valueChanges();
+    // return this.db.list('uploads').valueChanges();
+    const test = this.db.list('uploads').valueChanges();
+    // console.log("In image service: "+test);
+    return test;
   } 
   
   

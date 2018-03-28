@@ -1,12 +1,22 @@
-<p>
-  gallery works!
-</p>
-<div class="row">
+<!-- <div class="row">
   <h2>Photos</h2>
   <ul id="thumbnailsList">
     <li *ngFor="let image of images | async" class="img">
-      <a [routerLink]="['/image', image.$key]"></a>
+      <a [routerLink]="['/image', image.$key]">
       <img src="{{image.url}}" alt="photos" class="tn">
+      </a>
     </li>
   </ul>
+</div> -->
+<div class="row">
+    <h2>Latest Photos</h2>
+    <ul id="thumbnailsList">
+        <li *ngFor="let image of images | async" class="img">
+            <a [routerLink]="['/image', image.$key]">
+            <img src="{{image.url}}" class="tn">
+            </a>
+            <p>URL: {{image.url}}</p>
+            <p>KeyID: {{image.$key}}</p>
+        </li>
+    </ul>
 </div>
