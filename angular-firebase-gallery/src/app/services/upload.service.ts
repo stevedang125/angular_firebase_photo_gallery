@@ -45,7 +45,9 @@ export class UploadService {
   }// end of uploadFile method/function 
 
   private saveFileData(upload: Upload) {
-    this.db.list(`${this.basePath}/`).push(upload);
+  
+    firebase.database().ref('/uploads/').push(upload);
+    // this.db.list(`${this.basePath}/`).push(upload);
     console.log('Files saved!: '+ upload.url);
   }
 
